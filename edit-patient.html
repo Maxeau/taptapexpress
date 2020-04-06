@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+<title>TAP TAP EXPRESS</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/formValidation.min.css">
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/taptap-logo.jpeg" width="70" height="38" alt=""> <span>TAP TAP EXPRESS</span>                </a>
+            </div>
+            <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i>
+                        <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">
+                                                <img alt="John Doe" src="assets/img/user.jpg"
+                                                    class="img-fluid rounded-circle">
+                                            </span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">John Doe</span> added
+                                                    new task <span class="noti-title">Patient appointment booking</span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">V</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span>
+                                                    changed the task name <span class="noti-title">Appointment booking
+                                                        with payment gateway</span></p>
+                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">L</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Misty Tison</span>
+                                                    added <span class="noti-title">Domenic Houston</span> and <span
+                                                        class="noti-title">Claire Mapes</span> to project <span
+                                                        class="noti-title">Doctor available module</span></p>
+                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">G</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span>
+                                                    completed task <span class="noti-title">Patient and Doctor video
+                                                        conferencing</span></p>
+                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">V</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span>
+                                                    added new task <span class="noti-title">Private chat module</span>
+                                                </p>
+                                                <p class="noti-time"><span class="notification-time">2 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">Voir toutes les notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i
+                            class="fa fa-comment-o"></i> <span
+                            class="badge badge-pill bg-danger float-right">8</span></a>
+                </li>
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img"><img class="rounded-circle" id="profile-image" src="assets/img/user.jpg" width="40"
+                                alt="Admin">
+                            <span class="status online"></span></span>
+                        <span id="profile-name">Admin</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="profile.html">Mon Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Editer votre Profile</a>
+						<a class="dropdown-item" href="settings.html">Réglages</a>
+						<a class="dropdown-item" href="login.html">Déconnexion</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+                        class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">Mon Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Editer votre Profile</a>
+						<a class="dropdown-item" href="settings.html">Réglages</a>
+						<a class="dropdown-item" href="login.html">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Menu Principal</li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-calendar"></i> <span>Liste des Rendez-vous</span></a>
+                        </li>
+                        <li>
+                            <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Listes des Docteurs</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Listes des
+                                    Patients</span></a>
+                        </li>
+                        <li>
+                            <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Horaire du médecin</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-users"></i> <span> Employés </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="employees.html">Liste des Employés</a></li>
+                                <li><a href="leaves.html">Congés</a></li>
+                                <li><a href="holidays.html">Jours fériés</a></li>
+                                <li><a href="attendance.html">Présence</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-money"></i> <span> Comptes </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="invoices.html">Factures</a></li>
+                                <li><a href="payments.html">Paiements</a></li>
+                                <li><a href="expenses.html">Dépenses</a></li>
+                                <li><a href="taxes.html">Impôts</a></li>
+                                <li><a href="provident-fund.html">Caisse de prévoyance</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-book"></i> <span> Paie </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="salary.html"> Salaire des employés </a></li>
+                                <li><a href="salary-view.html"> Fiche de paie </a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="chat.html"><i class="fa fa-comments"></i> <span>Chat</span> <span
+                                    class="badge badge-pill bg-primary float-right">5</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-flag-o"></i> <span> Rapports </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="expense-reports.html"> Rapport de dépenses </a></li>
+                                <li><a href="invoice-reports.html"> Rapport de facture </a></li>
+                                <li><a href="assets.html"> Rapport d'équipements</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="settings.html"><i class="fa fa-cog"></i> <span>Réglages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="card-box">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="page-title">Modifier Patient</h2>
+                    </div>
+                    <div class="col-sm-3">
+                            <div class="form-group">
+                                    <label><strong>Patient ID</strong> <span
+                                            class="text-danger"></span></label>
+                                    <input class="form-control" type="text" id="patient_id" readonly="readonly">
+                                </div>
+
+                    </div>
+                </div>
+<!-- **************************************************** TABS BEGINNING ************************************************* -->
+                <div class="profile-tabs">
+                    <ul class="nav nav-tabs nav-tabs-bottom">
+                        <li class="nav-item"><a class="nav-link active" href="#general-info"
+                                data-toggle="tab">Information General</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#profile-sante" data-toggle="tab">Profile
+                                Sante</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#medicalpatient" data-toggle="tab">Dossier
+                                Medical Du Patient</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#observation" data-toggle="tab">Fiche Observation
+                                Du Medecin</a></li>
+
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="general-info">
+                            <div class="row">
+                                <div class="col-lg-8 offset-lg-2">
+
+                                    <form id="general-info" class="needs-validation" novalidate>
+
+                                        <div class="container">
+                                            <div class="row">
+
+                                                <div class="col-sm-6 col-lg-4">
+                                                   
+                                                    <div class="form-group">
+                                                        <label>Photo</label>
+                                                        <div class="image-card-box">
+                                                        <div class="profile-upload" id="image_holder">
+                                                            <!--<div class="upload-img">-->
+                                                            <img class="call-avatar" src="assets/img/user.jpg" width="150px" height="125px" id="image">
+                                                            <!--</div>-->
+                                                        </div>
+                                                    </div>
+                                                        <br>
+                                                        <!-- <div class="upload-input">
+                                                            <input type="file" class="form-control" id="image-file">
+                                                        </div> -->
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Prénom</strong> <span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" name="firstName" id="first_name" type="text" required>
+                                                        <div class="invalid-feedback">
+                                                            Votre prénom est obligatoire.
+                                                          </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><strong>Poste-Nom</strong></label>
+                                                        <input class="form-control" name="postName" id="post_name" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><strong>Nom</strong> <span
+                                                                class="text-danger">*</span></label>
+                                                        <input class="form-control" name="lastName" id="last_name" type="text" required>
+                                                        <div class="invalid-feedback">
+                                                            Votre nom de famille est obligatoire.
+                                                          </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                        
+                                            <div class="col-sm-6">
+
+                                        
+                                            <div class="form-group">
+                                                <label><strong>Langue Préferée</strong></label>
+                                                <select class="form-control select" value="Français" id="language" required>
+                                                    <option>Français</option>
+                                                    <option>Lingala</option>
+                                                    <option>Anglais</option>
+                                                    <option>Swahili</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label><strong>Race</strong></label>
+                                            <select class="form-control select" value="Noir" id="race" required>
+                                                <option>Noir</option>
+                                                <option>Caucasien(White)</option>
+                                                <option>Asiatique</option>
+                                                <option>Indien</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                            </div>
+
+                                        <div class="row">
+                                        
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label><strong>Date de Naissance</strong></label>
+                                                    <div class="cal-icon">
+                                                        <input type="text" class="form-control datetimepicker" id="date_of_birth" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="custom-control custom-radio">
+                                                    <label class="form-check-label"><strong>Sexe:</strong></label><br>
+                                                    <input type="radio" class="custom-control-input" id="male" name="gender" value="H" required>
+                                                    <label class="custom-control-label" for="male">Homme</label>
+                                                  </div>
+                                                  <div class="custom-control custom-radio mb-3">
+                                                    <input type="radio" class="custom-control-input" id="female" name="gender" value="F" required>
+                                                    <label class="custom-control-label" for="female">Femme</label>
+                                                    <div class="invalid-feedback"> Indiquer votre sexe.</div>
+                                                  </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label><strong>Numero de Telephone</strong> <span
+                                                        class="text-danger">*</span></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <select class="form-control select" id="select-country">
+                                                                    <option>CD</option>
+                                                                    <option>CG</option>
+                                                                    <option>BE</option>
+                                                                    <option>CA</option>
+                                                                    <option>US</option>
+                                                                    <option>AO</option>
+                                                                </select>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="phone_number" placeholder="+243 01 123 4567" required>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label><strong>Addresse Couriel</strong> <span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control" id="email" type="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label><strong>Profession</strong></label>
+                                                    <input type="text" id="profession" class="form-control ">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label><strong>Handicap</strong></label>
+                                                    <input type="text" id="handicap" class="form-control ">
+                                                </div>
+                                            </div>
+
+                                    
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label><strong>Addresse (Numero, Ave, Rue,
+                                                                    Reference)</strong></label>
+                                                            <input type="text" id="address" class="form-control ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6 col-lg-4">
+                                                        <div class="form-group">
+                                                            <label><strong>Pays</strong></label>
+                                                            <select class="form-control select" id="country" required>
+                                                                <option>RDC</option>
+                                                                <option>Congo Brazza</option>
+                                                                <option>Belgique</option>
+                                                                <option>Canada</option>
+                                                                <option>Etat-Unis</option>
+                                                                <option>Angola</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-md-6 col-lg-4">
+                                                        <div class="form-group">
+                                                            <label><strong>Province</strong></label>
+                                                            <select class="form-control select"id="province" required>
+                                                                <option>Kinshasa</option>
+                                                                <option>Bas-Uele</option>
+                                                                <option>Équateur</option>
+                                                                <option>Haut-Katanga</option>
+                                                                <option>Haut-Lomami</option>
+                                                                <option>Haut-Uele</option>
+                                                                <option>Ituri</option>
+                                                                <option>Kasaï</option>
+                                                                <option>Kasaï-Central</option>
+                                                                <option>Kasaï-Oriental</option>
+                                                                <option>Kongo-Central</option>
+                                                                <option>Kwango</option>
+                                                                <option>Kwilu</option>
+                                                                <option>Lomami</option>
+                                                                <option>Lualaba</option>
+                                                                <option>Mai-Ndombe</option>
+                                                                <option>Maniema</option>
+                                                                <option>Mongala</option>
+                                                                <option>Nord-Kivu</option>
+                                                                <option>Nord-Ubangi</option>
+                                                                <option>Sankuru</option>
+                                                                <option>Sud-Kivu</option>
+                                                                <option>Sud-Ubangi</option>
+                                                                <option>Tanganyika</option>
+                                                                <option>Tshopo</option>
+                                                                <option>Tshuapa</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-md-6 col-lg-4">
+                                                        <div class="form-group">
+                                                            <label><strong>Commune/Ville</strong></label>
+                                                            <input type="text" id="city" class="form-control" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--<div class="col-sm-6 col-md-6 col-lg-3">
+                                                <div class="form-group">
+                                                    <label>Postal Code</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="display-block"><strong>Status</strong></label>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="status"
+                                                    id="active" value="true" checked>
+                                                <label class="form-check-label" for="active">
+                                                    Active
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="status"
+                                                    id="inactive" value="false">
+                                                <label class="form-check-label" for="inactive">
+                                                    Inactive
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="m-t-20 text-center">
+                                            <button type="submit" class="btn btn-primary submit-btn">Sauveguarder</button>
+                                        </div>
+                                </div>
+
+                                </form>
+        
+                            </div>
+                        </div>
+
+    <!-- **************************************************** PROFILE SANTE TAB ************************************************* -->
+    <div class="tab-pane" id="profile-sante">
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><strong>Allergies</strong></label>
+                            <textarea id="allergy" cols="30" rows="4" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label><strong>Listes des medicaments</strong></label>
+                                    <textarea id="med-list" cols="30" rows="4" class="form-control"></textarea>
+                           </div>
+                    </div>
+               
+                </div>
+
+                <div class="card-box">
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="form-check-label"><strong>Port des Lunettes</strong></label>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input id="yes" type="radio" name="wear-glasses" class="form-check-input" value="true">Oui
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input id="no" type="radio" name="wear-glasses" class="form-check-input" value="true">Non
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label><strong>Derniere Consultation en Ophtalmologie</strong></label>
+                            <div class="cal-icon">
+                                <input id="last-visit" type="text" class="form-control datetimepicker">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label><strong>Nom Du Medecin Traitant</strong></label>
+                            <input id="treating-doctor" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                            <label><strong>Nom de la Clinique</strong></label>
+                            <input id="clinic-name" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+
+                 <!-- **************************************************** Antecedents Medicaux familiale Section ************************************************* -->
+                <div class="card-box">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-check-label"><strong> Antecedents Medicaux familiale</strong> </label>
+                            <div class="row">
+                            <div class="col-sm-4">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="Antecedents" class="form-check-input" id="diabete" value="Diabète" >Diabète</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="Antecedents" class="form-check-input" id="hypertension" value="Hypertension artérielle">Hypertension artérielle</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="Antecedents" class="form-check-input" id="cholesterol" value="Cholestérol">Cholestérol</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="Antecedents" class="form-check-input" id="cardiaque" value="Problèmes cardiaques">Problèmes cardiaques</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="Antecedents" class="form-check-input" id="Asthme" value="asthme">Asthme</label>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="Antecedents" class="form-check-input" id="renale-desease" value="Maladie rénale">Maladie rénale</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="Antecedents" class="form-check-input" id="calcul-renaux" value="Calculs rénaux">Calculs rénaux</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="Antecedents" class="form-check-input" id="jaunisse" value="Jaunisse">Jaunisse</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="Antecedents" class="form-check-input" id="rhutmatisme" value="Rhumatisme articulaire aigu">Rhumatisme articulaire aigu</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="Antecedents" class="form-check-input" id="cancer" value="Cancer">Cancer</label>
+                                </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="Antecedents" class="form-check-input" id="vih" value="VIH / SIDA">VIH / SIDA</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="Antecedents" class="form-check-input" id="epilepsie" value="Épilepsie">Épilepsie</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="Antecedents" class="form-check-input" id="grossesse" value="Grossesse">Grossesse</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="Antecedents" class="form-check-input" id="anticoagulants" value="Anticoagulants">Anticoagulants</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="Antecedents" class="form-check-input" id="chirugie" value="Chirugie">Chirugie</label>
+                                    </div>
+                                    </div>
+
+                            </div> 
+                        </div>
+                    </div>
+
+                 <!-- **************************************************** Oculaires Familialle Section ************************************************* -->
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="form-check-label"><strong>Oculaires Familialle</strong> </label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="maculaire" value="La dégénérescence maculaire">La dégénérescence maculaire</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="glaucome" value="Le glaucome">Le glaucome</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="diabetique" value="La rétinopathie diabétique">La rétinopathie diabétique</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="cataractes" value="Les cataractes">Les cataractes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="piementaire" value="La rétinite pigmentaire">La rétinite pigmentaire</label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="cecite" value="La cécité">La cécité</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="oculaire" value=">Les tumeurs oculaires">Les tumeurs oculaires</label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="familialle"
+                                            class="form-check-input" id="stabisme" value="Le strabisme">Le strabisme</label>
+                                </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="nystagmus" value="Le nystagmus">Le nystagmus</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="basedow" value="La maladie de Basedow">La maladie de Basedow</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="keratocone" value="Le kératocône">Le kératocône</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="dyslexie" value="La dyslexie">La dyslexie</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="daltonisme" value="Le daltonisme">Le daltonisme</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="albinisme" value="L’albinisme">L’albinisme</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="refraction" value=">Les erreurs de réfraction">Les erreurs de réfraction</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input" id="usher" value="Le syndrome d'Usher">Le syndrome d'Usher</label>
+                                    </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input" id="stargardt" value="La maladie de Stargardt">La maladie de Stargardt</label>
+                                        </div>
+
+
+                                        
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Épilepsie</label>
+                                        </div> -->
+
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Grossesse</label>
+                                        </div> -->
+
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Anticoagulants</label>
+                                        </div> -->
+
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Chirugie</label>
+                                        </div> -->
+                                        
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Grossesse</label>
+                                        </div> -->
+
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Anticoagulants</label>
+                                        </div> -->
+
+                                        <!-- <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" name="familialle"
+                                                    class="form-check-input">Chirugie</label>
+                                        </div> -->
+                                        </div>
+
+                                </div> 
+
+                        </div>
+
+
+                    </div>
+
+                 <!-- **************************************************** Oculaires Personnelle Section ************************************************* -->
+
+                 <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="form-check-label"><strong>Oculaires Personnelle</strong> </label>
+                        <div class="row">
+                            <div class="col-sm-4">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="maculaire" value="La dégénérescence maculaire">La dégénérescence maculaire</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="glaucome" value="Le glaucome">Le glaucome</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="diabetique" value="La rétinopathie diabétique">La rétinopathie diabétique</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="cataractes" value="Les cataractes">Les cataractes</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="piementaire" value="La rétinite pigmentaire">La rétinite pigmentaire</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="cecite" value="La cécité">La cécité</label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="oculaire" value=">Les tumeurs oculaires">Les tumeurs oculaires</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="personnelle"
+                                        class="form-check-input" id="stabisme" value="Le strabisme">Le strabisme</label>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="nystagmus" value="Le nystagmus">Le nystagmus</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="basedow" value="La maladie de Basedow">La maladie de Basedow</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="keratocone" value="Le kératocône">Le kératocône</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="dyslexie" value="La dyslexie">La dyslexie</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="daltonisme" value="Le daltonisme">Le daltonisme</label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="albinisme" value="L’albinisme">L’albinisme</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="refraction" value=">Les erreurs de réfraction">Les erreurs de réfraction</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" name="personnelle"
+                                            class="form-check-input" id="usher" value="Le syndrome d'Usher">Le syndrome d'Usher</label>
+                                </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="personnelle"
+                                                class="form-check-input" id="stargardt" value="La maladie de Stargardt">La maladie de Stargardt</label>
+                                    </div>
+
+
+                                    
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Épilepsie</label>
+                                    </div> -->
+
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Grossesse</label>
+                                    </div> -->
+
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Anticoagulants</label>
+                                    </div> -->
+
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Chirugie</label>
+                                    </div> -->
+                                    
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Grossesse</label>
+                                    </div> -->
+
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Anticoagulants</label>
+                                    </div> -->
+
+                                    <!-- <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="familialle"
+                                                class="form-check-input">Chirugie</label>
+                                    </div> -->
+                                    </div>
+
+                            </div> 
+
+                    </div>
+
+
+                </div>
+                </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label><strong>Autres Informations</strong></label>
+                            <textarea cols="30" rows="4" class="form-control" id="other-info"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+                           
+
+
+    <!-- **************************************************** MEDICAL PLAN TAB ************************************************* -->
+    <div class="tab-pane" id="medicalpatient">
+        <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>Histoire Oculaire Familiale</strong></label>
+                            <textarea cols="30" rows="4" class="form-control" id="histoire-familiale"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><strong>Histoire Oculaire Personnelle</strong></label>
+                            <textarea cols="30" rows="4" class="form-control" id="histoire-familiale"></textarea>
+                        </div>
+                </div>
+            </div>
+
+        <div class="card-box">
+                <div class="row">
+                    <label><strong>Acuite Visuel (A.V):</strong> <span class="text-danger">*</span></label>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3 text-center"><strong>S.C</strong></div>
+                    <div class="col-sm-3 text-center"><strong>C.C</strong></div>
+                    <div class="col-sm-3 text-center"><strong>T.S</strong></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Oeil Droite(OD): <span class="text-danger">*</span></label>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <select id="avscod" class="form-control select">
+                            <option>20/400</option>
+                            <option>20/320</option>
+                            <option>20/250</option>
+                            <option>20/200</option>
+                            <option>20/160</option>
+                            <option>20/125</option>
+                            <option>20/100</option>
+                            <option>20/80</option>
+                            <option>20/63</option>
+                            <option>20/50</option>
+                            <option>20/40</option>
+                            <option>20/32</option>
+                            <option>20/25</option>
+                            <option>20/20</option>
+                            <option>20/16</option>
+                            <option>20/12,5</option>
+                            <option>20/10</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <select id="avccod" class="form-control select">
+                            <option>20/400</option>
+                            <option>20/320</option>
+                            <option>20/250</option>
+                            <option>20/200</option>
+                            <option>20/160</option>
+                            <option>20/125</option>
+                            <option>20/100</option>
+                            <option>20/80</option>
+                            <option>20/63</option>
+                            <option>20/50</option>
+                            <option>20/40</option>
+                            <option>20/32</option>
+                            <option>20/25</option>
+                            <option>20/20</option>
+                            <option>20/16</option>
+                            <option>20/12,5</option>
+                            <option>20/10</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <select id="avtsod" class="form-control select">
+                            <option>20/400 </option>
+                            <option>20/320</option>
+                            <option>20/250</option>
+                            <option>20/200</option>
+                            <option>20/160</option>
+                            <option>20/125</option>
+                            <option>20/100</option>
+                            <option>20/80</option>
+                            <option>20/63</option>
+                            <option>20/50</option>
+                            <option>20/40</option>
+                            <option>20/32</option>
+                            <option>20/25</option>
+                            <option>20/20</option>
+                            <option>20/16</option>
+                            <option>20/12,5</option>
+                            <option>20/10</option>
+                        </select>
+                    </div>
+                </div>
+
+            <div class="row">
+            <div class="col-sm-3">
+                <label>Oeil Gauche(OS):<span class="text-danger">*</span></label>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="avscos" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="avccos" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="avtsos" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+        </div>
+        </div>
+    
+        
+    <div class="card-box">
+        <div class="row">
+            <label><strong>Refraction:</strong> <span class="text-danger">*</span></label>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 text-center"><strong>S.C</strong></div>
+            <div class="col-sm-3 text-center"><strong>C.C</strong></div>
+            <div class="col-sm-3 text-center"><strong>T.S</strong></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Oeil Droite(OD): <span class="text-danger">*</span></label>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="refscod" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="refccod" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="reftsod" class="form-control select">
+                    <option>20/400 </option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+        </div>
+
+    <div class="row">
+    <div class="col-sm-3">
+        <label>Oeil Gauche(OS):<span class="text-danger">*</span></label>
+    </div>
+
+    <div class="col-sm-3">
+        <select id="refscos" class="form-control select">
+            <option>20/400</option>
+            <option>20/320</option>
+            <option>20/250</option>
+            <option>20/200</option>
+            <option>20/160</option>
+            <option>20/125</option>
+            <option>20/100</option>
+            <option>20/80</option>
+            <option>20/63</option>
+            <option>20/50</option>
+            <option>20/40</option>
+            <option>20/32</option>
+            <option>20/25</option>
+            <option>20/20</option>
+            <option>20/16</option>
+            <option>20/12,5</option>
+            <option>20/10</option>
+        </select>
+    </div>
+
+    <div class="col-sm-3">
+        <select id="refccos"class="form-control select">
+            <option>20/400</option>
+            <option>20/320</option>
+            <option>20/250</option>
+            <option>20/200</option>
+            <option>20/160</option>
+            <option>20/125</option>
+            <option>20/100</option>
+            <option>20/80</option>
+            <option>20/63</option>
+            <option>20/50</option>
+            <option>20/40</option>
+            <option>20/32</option>
+            <option>20/25</option>
+            <option>20/20</option>
+            <option>20/16</option>
+            <option>20/12,5</option>
+            <option>20/10</option>
+        </select>
+    </div>
+
+    <div class="col-sm-3">
+        <select id="reftsos" class="form-control select">
+            <option>20/400</option>
+            <option>20/320</option>
+            <option>20/250</option>
+            <option>20/200</option>
+            <option>20/160</option>
+            <option>20/125</option>
+            <option>20/100</option>
+            <option>20/80</option>
+            <option>20/63</option>
+            <option>20/50</option>
+            <option>20/40</option>
+            <option>20/32</option>
+            <option>20/25</option>
+            <option>20/20</option>
+            <option>20/16</option>
+            <option>20/12,5</option>
+            <option>20/10</option>
+        </select>
+    </div>
+</div>
+    </div>
+    <div class="card-box">
+                <div class="row">
+                    <div class="col-md-6">
+                    <label><strong>Pression Intra-Oculaire</strong> <span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-md-6">
+                        <label><strong>Pachymetrie</strong> <span class="text-danger">*</span></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                    <label>Oeil Droite (OD)</label>
+                        <input id="pressionod" class="form-control" type="number">
+                    </div>
+
+                <div class="col-md-3">
+                    <label>Oeil Gauche (OS)</label>
+                        <input id="pressionos" class="form-control" type="number">
+                </div>
+
+                <div class="col-md-3">
+                    <label>Oeil Droite (OD)</label>
+                        <input id="pachymetrieod" class="form-control" type="number">
+                    </div>
+
+                <div class="col-md-3">
+                    <label>Oeil Gauche (OS)</label>
+                        <input id="pachymetrieos" class="form-control" type="number">
+                </div>
+                    </div>
+                            
+        </div>
+                      
+        <div class="card-box">
+            <div class="row">
+                <label><strong>Prescription Lunettes</strong><spanclass="text-danger">*</span></label>
+            </div>                            
+        
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3 text-center"><strong>Sphere</strong></div>
+                <div class="col-sm-3 text-center"><strong>Cylindre</strong></div>
+                <div class="col-sm-3 text-center"><strong>Axe</strong></div>
+            </div>
+        
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Oeil Droite(OD): <span class="text-danger">*</span></label>
+                </div>
+
+                <div class="col-sm-3">
+                    <select id="sphereod" class="form-control select">
+                        <option>20/400</option>
+                        <option>20/320</option>
+                        <option>20/250</option>
+                        <option>20/200</option>
+                        <option>20/160</option>
+                        <option>20/125</option>
+                        <option>20/100</option>
+                        <option>20/80</option>
+                        <option>20/63</option>
+                        <option>20/50</option>
+                        <option>20/40</option>
+                        <option>20/32</option>
+                        <option>20/25</option>
+                        <option>20/20</option>
+                        <option>20/16</option>
+                        <option>20/12,5</option>
+                        <option>20/10</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-3">
+                    <select id="cylindreod" class="form-control select">
+                        <option>20/400</option>
+                        <option>20/320</option>
+                        <option>20/250</option>
+                        <option>20/200</option>
+                        <option>20/160</option>
+                        <option>20/125</option>
+                        <option>20/100</option>
+                        <option>20/80</option>
+                        <option>20/63</option>
+                        <option>20/50</option>
+                        <option>20/40</option>
+                        <option>20/32</option>
+                        <option>20/25</option>
+                        <option>20/20</option>
+                        <option>20/16</option>
+                        <option>20/12,5</option>
+                        <option>20/10</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-3">
+                    <select id="axeod" class="form-control select">
+                        <option>20/400 </option>
+                        <option>20/320</option>
+                        <option>20/250</option>
+                        <option>20/200</option>
+                        <option>20/160</option>
+                        <option>20/125</option>
+                        <option>20/100</option>
+                        <option>20/80</option>
+                        <option>20/63</option>
+                        <option>20/50</option>
+                        <option>20/40</option>
+                        <option>20/32</option>
+                        <option>20/25</option>
+                        <option>20/20</option>
+                        <option>20/16</option>
+                        <option>20/12,5</option>
+                        <option>20/10</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+            <div class="col-sm-3">
+                <label>Oeil Gauche(OS):<span class="text-danger">*</span></label>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="sphereos" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="cylindreos" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select id="axeos" class="form-control select">
+                    <option>20/400</option>
+                    <option>20/320</option>
+                    <option>20/250</option>
+                    <option>20/200</option>
+                    <option>20/160</option>
+                    <option>20/125</option>
+                    <option>20/100</option>
+                    <option>20/80</option>
+                    <option>20/63</option>
+                    <option>20/50</option>
+                    <option>20/40</option>
+                    <option>20/32</option>
+                    <option>20/25</option>
+                    <option>20/20</option>
+                    <option>20/16</option>
+                    <option>20/12,5</option>
+                    <option>20/10</option>
+                </select>
+            </div>
+    </div>
+        </div>
+
+    </div>
+ <!-- **************************************************** OBSERVATION TAB ************************************************* -->
+ <div class="tab-pane" id="observation">
+    <div class="content">
+            
+</div>
+
+<br>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>INSPECTION</strong></label>
+            <textarea id="inspection" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+</div>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>MEO</strong></label>
+            <textarea id="meo" cols="30" rows="4" class="form-control"></textarea>
+            
+        </div>
+</div>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>LAF</strong></label>
+            <textarea id="laf" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+</div>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>FO</strong></label>
+            <textarea id="fo" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+</div>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>DIAGNOSTIC</strong></label>
+            <textarea id="diagnostic" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+</div>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>P/ </strong></label>
+            <textarea id="p" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+</div>
+
+<div class="card-box">
+    <div class="form-group">
+            <label><strong>F/U</strong></label>
+            <textarea id="fu" cols="30" rows="4" class="form-control"></textarea>
+        </div>
+</div>
+
+</div>
+                        </div>
+                    <br>
+
+        
+                    </div>
+                    
+
+                </div>
+                </div>
+            </div>
+
+            <div class="notification-box">
+                <div class="msg-sidebar notifications msg-noti">
+                    <div class="topnav-dropdown-header">
+                        <span>Messages</span>
+                    </div>
+                    <div class="drop-scroll msg-list-scroll" id="msg_list">
+                        <ul class="list-box">
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Richard Miles </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item new-message">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">John Doe</span>
+                                            <span class="message-time">1 Aug</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Tarah Shropshire </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Mike Litorus</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Catherine Manseau </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">D</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Domenic Houston </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">B</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Buster Wigton </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Rolland Webber </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Claire Mapes </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Melita Faucher</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Jeffery Lalor</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">L</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Loren Gatlin</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Tarah Shropshire</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="chat.html">See all messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="patient_saved" class="modal fade patient-modal" role="dialog">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body text-center">
+						<img src="assets/img/sent.png" alt="" width="50" height="46">
+						<h3>Patient mis à jour</h3>
+						<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">OK</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+        </div>
+        <div id="take_photo" class="modal fade camera-modal" role="dialog">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					
+				</div>
+			</div>
+			
+		</div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>  
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/moment-fr.js"></script>
+    <script src="assets/js/edit-patient.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/webcam.min.js"></script>
+    <script src="assets/js/cleave.js"></script>
+    <script src="assets/js/cleave-phone.i18n.js"></script>
+   
+    <script>
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: "mm-dd-yyyy",
+                format: 'LT'
+                
+
+            });
+        });
+ </script>
+</body>
+
+</html>

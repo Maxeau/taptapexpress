@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+<title>TAP TAP EXPRESS</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/formValidation.min.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper  account-wrapper">
+        <div class="account-page">
+            <div class="account-center">
+                <div class="account-box">
+                    <form action="" id="signup-form" class="needs-validation" novalidate>
+						<div class="account-logo">
+                            <a href="index.html"><img src="assets/img/logo-dark.png" alt=""></a>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label><strong>Date de Naissance</strong></label>
+                                    <div class="cal-icon">
+                                        <input type="text" class="form-control datetimepicker" id="date-of-birth" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Numéro d'emploie</label>
+                            <input type="text" id="employee-id" class="form-control" disabled>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><strong>Prénom</strong> <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" name="firstName" id="first_name" type="text" required>
+                            <div class="invalid-feedback">
+                                Votre prénom est obligatoire.
+                              </div>
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><strong>Nom</strong> <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" name="lastName" id="last_name" type="text" required>
+                            <div class="invalid-feedback">
+                                Votre nom de famille est obligatoire.
+                              </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Numero Telephone Mobile</label>
+                            <input type="text" id="phone-number" class="form-control" placeholder="243 01 123 4567" required>
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Addresse Couriel</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Mot de Passe</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Confirmer le mot de Passe</label>
+                            <input type="password" class="form-control" id="confirm-password" required>
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="col-sm-6">
+                    <div class="custom-control custom-radio">
+                        <label class="form-check-label"><strong>Sexe:</strong></label><br>
+                        <input type="radio" class="custom-control-input" id="male" name="gender" value="H" required>
+                        <label class="custom-control-label" for="male">Homme</label>
+                      </div>
+                      <div class="custom-control custom-radio mb-3">
+                        <input type="radio" class="custom-control-input" id="female" name="gender" value="F" required>
+                        <label class="custom-control-label" for="female">Femme</label>
+                        <div class="invalid-feedback">Indiquer votre sexe.</div>
+                      </div>
+                </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary account-btn" id="register-button" type="submit">Inscription</button>
+                        </div>
+                        <div class="text-center login-link">
+                            Vous avez deja un Compte <a href="login.html">Connexion</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="user-created" class="modal fade user-modal" role="dialog">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body text-center">
+						<img src="assets/img/sent.png" alt="" width="50" height="46">
+						<h3>L'utilisateur a été crée</h3>
+						<div class="m-t-20"><a href="index.html" class="btn btn-white" data-dismiss="modal">OK</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+        </div>
+    </div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/cleave.js"></script>
+    <script src="assets/js/registration.js"></script>
+    <script src="assets/js/cleave-phone.i18n.js"></script>
+    <script>
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: "mm-dd-yyyy",
+                format: 'LT'
+            });
+        });
+ </script>
+</body>
+
+</html>
