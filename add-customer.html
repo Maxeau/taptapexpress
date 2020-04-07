@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
+    <div class="main-wrapper" style="background-color:lightgrey;">
         <div class="header">
             <div class="header-left">
                 <a href="index.html" class="logo">
@@ -86,726 +86,719 @@
             </div>
         </div>
         <div class="page-wrapper">
-            <div class="content">
-
-                <!-- MultiStep Form -->
-<div class="row">
-    <div>
-        
-    </div>
-    
-    <div class="col-md-12 col-md-offset-3">
-        <form id="msform">
-            
-            <!-- fieldsets -->
-            <fieldset>
-                <h2 class="fs-title">Information Personnelle</h2>
-                <h3 class="fs-subtitle">Dites-nous quelque chose de plus sur vous</h3>
-                <div class="col-lg-8 offset-lg-2">
-
-                    <form action="" id="general-info" class="needs-validation" novalidate>
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="card">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group" id="msform1">
-                                        <label>Photo</label>
-                                        <div class="profile-upload" id="image_holder">
-                                            <div id="my_camera"></div><br/>
-                                            <div id="results"></div>
-                                        </div>
-                                        <br>
-                                        <div class="upload-input">
-                                            <input type=button value="Prendre une photo" class="btn btn-primary" id="take_snapshot">
-                                            <input type="hidden" name="image" class="image-tag">
-                                            <!-- <button type="button" class="btn btn-primary" >Prendre la photo</button> -->
-                                            <!-- <input type="file" class="form-control" id="image-file"> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                                <div class="col">
-                                    <div class="form-group" id="msform1">
-                                        <label for="firstName"><strong>Prénom</strong> <span class="text-danger">*</span></label>
-                                        <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-user prefix grey-text"></i></span>
-                                        </div>
-                                        <input class="form-control form-control-sm" name="firstName" id="first_name" type="text" required>
-                                        <div class="invalid-feedback">
-                                            Votre prénom est obligatoire.
-                                          </div>
-                                    </div>
-
-                                    <!-- <div class="form-group" id="msform1">
-                                        <label for="postName"><strong>Poste-Nom</strong></label>
-                                        <input class="form-control" name="postName" id="post_name" type="text">
-                                    </div> -->
-
-                                    <div class="form-group" id="msform1">
-                                        <!-- <i class="fa fa-user prefix grey-text"></i> -->
-                                        <label for="lastName"><strong>Nom</strong> <span class="text-danger">*</span></label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-user prefix grey-text"></i></span>
-                                            </div>
-                                            <input class="form-control" name="lastName" id="last_name" type="text" required>
-                                            <div class="invalid-feedback">
-                                                Votre nom de famille est obligatoire.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <form id="msform">
+                <div> 
+                    <div class="col-md-8 col-md-offset-3">
+                        <div class="card" >
+                            <div class="card-header">
+                                <h2 class="fs-title">Information Personnelle</h2>
+                                <h3 class="fs-subtitle">Dites-nous quelque chose de plus sur vous</h3>
+                                <hr>
                             </div>
-                        </div>
-
-                        <!-- <div class="row">
-                        
-                            <div class="col-sm-6">
-
-                        
-                            <div class="form-group" id="msform1">
-                                <label><strong>Langue Préferée</strong></label>
-                                <select class="browser-default custom-select mb-3" value="Français" id="language" required>
-                                    <option>Français</option>
-                                    <option>Lingala</option>
-                                    <option>Anglais</option>
-                                    <option>Swahili</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                        <div class="form-group" id="msform1">
-                            <label><strong>Race</strong></label>
-                            <select class="browser-default custom-select custom-select-lg mb-3" value="Noir" id="race" required>
-                                <option>Noir</option>
-                                <option>Caucasien(White)</option>
-                                <option>Asiatique</option>
-                                <option>Indien</option>
-                            </select>
-                        </div>
-                        </div>
-                        </div> -->
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group" id="msform1">
-                                    <label>Date de Naissance</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-calendar prefix grey-text"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control id="date_of_birth" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6" id="msform1">
-                                <div class="custom-control custom-radio mb-3">
-                                    <label class="form-check-label"><strong>Sexe:</strong></label><br>
-                                    <div>
-                                        <input type="radio" class="custom-control-input" id="male" name="gender" value="H" required>
-                                        <label class="custom-control-label" for="male">Homme</label>
-                                        <input type="radio" class="custom-control-input" id="female" name="gender" value="F" required>
-                                        <label class="custom-control-label" for="female">Femme</label>
-                                    </div>
-                                </div>
-                                    <div class="invalid-feedback"> Indiquer votre sexe.</div>
-                                  </div>
-
                             <div class="col-sm-12">
-                                <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group" id="msform1">
-                                    <label><strong>Numero de Telephone</strong> <span
-                                        class="text-danger">*</span></label>
-                                        <div class="input-group">
-                                            <!-- <div class="input-group-prepend">
-                                                <select class="form-control select" id="select-country">
-                                                    <option>CD</option>
-                                                    <option>CG</option>
-                                                    <option>BE</option>
-                                                    <option>CA</option>
-                                                    <option>US</option>
-                                                    <option>AO</option>
-                                                </select>
-                                            </div> -->
-                                            <input type="text" class="form-control" id="phone_number" placeholder="+514-555-5555" required>
-                                        </div> 
-                                </div>
+                                <form action="" id="general-info" class="needs-validation" novalidate>
+                                    <div class="container" style="padding:10px;">
+                                        <!--Picture and Name Section-->
+                                        <div class="row">
+                                            <div class="card">
+                                            <div class="col-sm-6 col-lg-4">
+                                                <div class="form-group" id="msform1">
+                                                    <label>Photo</label>
+                                                    <div class="profile-upload" id="image_holder">
+                                                        <div id="my_camera"></div><br/>
+                                                        <div id="results"></div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="upload-input">
+                                                        <input type=button value="Prendre une photo" class="btn btn-primary" id="take_snapshot">
+                                                        <input type="hidden" name="image" class="image-tag">
+                                                        <!-- <button type="button" class="btn btn-primary" >Prendre la photo</button> -->
+                                                        <!-- <input type="file" class="form-control" id="image-file"> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="col">
+                                                <div class="form-group" id="msform1">
+                                                    <label for="firstName"><strong>Prénom</strong> <span class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-user prefix grey-text"></i></span>
+                                                    </div>
+                                                    <input class="form-control form-control-sm" name="firstName" id="first_name" type="text" required>
+                                                    <div class="invalid-feedback">
+                                                        Votre prénom est obligatoire.
+                                                    </div>
+                                                </div>
+
+                                                <!-- <div class="form-group" id="msform1">
+                                                    <label for="postName"><strong>Poste-Nom</strong></label>
+                                                    <input class="form-control" name="postName" id="post_name" type="text">
+                                                </div> -->
+
+                                                <div class="form-group" id="msform1">
+                                                    <!-- <i class="fa fa-user prefix grey-text"></i> -->
+                                                    <label for="lastName"><strong>Nom</strong> <span class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-user prefix grey-text"></i></span>
+                                                        </div>
+                                                        <input class="form-control" name="lastName" id="last_name" type="text" required>
+                                                        <div class="invalid-feedback">
+                                                            Votre nom de famille est obligatoire.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                    <div class="col-sm-12 col-md-offset-3">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group" id="msform1">
+                                                    <label>Date de Naissance</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-calendar prefix grey-text"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control id="date_of_birth" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6" id="msform1">
+                                                <div class="custom-control custom-radio mb-3">
+                                                    <label class="form-check-label"><strong>Sexe:</strong></label><br>
+                                                    <div>
+                                                        <input type="radio" class="custom-control-input" id="male" name="gender" value="H" required>
+                                                        <label class="custom-control-label" for="male">Homme</label>
+                                                        <input style="margin-left:20px;"type="radio" class="custom-control-input" id="female" name="gender" value="F" required>
+                                                        <label style="margin-left:25px;" class="custom-control-label" for="female">Femme</label>
+                                                    </div>
+                                                </div>
+                                                    <div class="invalid-feedback"> Indiquer votre sexe.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group" id="msform1">
+                                                    <label><strong>Numéro de Téléphone</strong> <span class="text-danger"></span></label>
+                                                            <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-phone prefix grey-text"></i></span>
+                                                                    </div>
+                                                                <input type="text" class="form-control" id="phone_number" placeholder="+514-555-5555" required>
+                                                            </div>
+                                                </div>
+                                            </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group" id="msform1">
+                                                <label><strong>Addresse Couriel</strong> <span class="text-danger"></span></label>
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                        </div>
+                                                    <input class="form-control" id="email" type="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="form-group" id="msform1">
+                                                <label><strong>Profession</strong></label>
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-briefcase prefix grey-text"></i></span>
+                                                        </div>
+                                                    <input type="text" id="profession" class="form-control ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                                    <div class="form-group" id="msform1">
+                                                        <label><strong>Addresse (Numero, Rue)</strong></label>
+                                                        <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-map-pin prefix grey-text"></i></span>
+                                                                </div>
+                                                            <input type="text" id="address" class="form-control ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                                    <div class="form-group" id="msform1">
+                                                        <label><strong>Ville</strong></label>
+                                                        <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-city prefix grey-text"></i></span>
+                                                                </div>
+                                                            <input type="text" id="city" class="form-control" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-sm-6 col-md-6 col-lg-3" id="msform1">
+                                                    <div class="form-group">
+                                                        <label><strong>Province</strong></label>
+                                                        <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-globe-americas prefix grey-text"></i></span>
+                                                                </div>
+                                                            <select class="form-control select"id="province" required>
+                                                                <option>Quebec</option>
+                                                                <option>Ontario</option>
+                                                                <option>Équateur</option>
+                                                                <option>Haut-Katanga</option>
+                                                                <option>Haut-Lomami</option>
+                                                                <option>Haut-Uele</option>
+                                                                <option>Ituri</option>
+                                                                <option>Kasaï</option>
+                                                                <option>Kasaï-Central</option>
+                                                                <option>Kasaï-Oriental</option>
+                                                                <option>Kongo-Central</option>
+                                                                <option>Kwango</option>
+                                                                <option>Kwilu</option>
+                                                                <option>Lomami</option>
+                                                                <option>Lualaba</option>
+                                                                <option>Mai-Ndombe</option>
+                                                                <option>Maniema</option>
+                                                                <option>Mongala</option>
+                                                                <option>Nord-Kivu</option>
+                                                                <option>Nord-Ubangi</option>
+                                                                <option>Sankuru</option>
+                                                                <option>Sud-Kivu</option>
+                                                                <option>Sud-Ubangi</option>
+                                                                <option>Tanganyika</option>
+                                                                <option>Tshopo</option>
+                                                                <option>Tshuapa</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-sm-6 col-md-6 col-lg-3">
+                                                    <div class="form-group" id="msform1">
+                                                        <label><strong>Postal Code</strong></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="inputGroupPrepend"> <i class="fa fa-mail-bulk prefix grey-text"></i></span>
+                                                            </div>
+                                                        <input type="text" id="code" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
                             
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group" id="msform1">
-                                    <label><strong>Addresse Couriel</strong> <span
-                                            class="text-danger"></span></label>
-                                    <input class="form-control" id="email" type="email">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="form-group" id="msform1">
-                                    <label><strong>Profession</strong></label>
-                                    <input type="text" id="profession" class="form-control ">
-                                </div>
-                            </div>
-                                </div>
-                            </div>
-                    
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-6 col-lg-3">
-                                        <div class="form-group" id="msform1">
-                                            <label><strong>Addresse (Numero, Rue)</strong></label>
-                                            <input type="text" id="address" class="form-control ">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-6 col-lg-3">
-                                        <div class="form-group" id="msform1">
-                                            <label><strong>Ville</strong></label>
-                                            <input type="text" id="city" class="form-control" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-6 col-lg-3" id="msform1">
-                                        <div class="form-group">
-                                            <label><strong>Province</strong></label>
-                                            <select class="form-control select"id="province" required>
-                                                <option>Quebec</option>
-                                                <option>Ontario</option>
-                                                <option>Équateur</option>
-                                                <option>Haut-Katanga</option>
-                                                <option>Haut-Lomami</option>
-                                                <option>Haut-Uele</option>
-                                                <option>Ituri</option>
-                                                <option>Kasaï</option>
-                                                <option>Kasaï-Central</option>
-                                                <option>Kasaï-Oriental</option>
-                                                <option>Kongo-Central</option>
-                                                <option>Kwango</option>
-                                                <option>Kwilu</option>
-                                                <option>Lomami</option>
-                                                <option>Lualaba</option>
-                                                <option>Mai-Ndombe</option>
-                                                <option>Maniema</option>
-                                                <option>Mongala</option>
-                                                <option>Nord-Kivu</option>
-                                                <option>Nord-Ubangi</option>
-                                                <option>Sankuru</option>
-                                                <option>Sud-Kivu</option>
-                                                <option>Sud-Ubangi</option>
-                                                <option>Tanganyika</option>
-                                                <option>Tshopo</option>
-                                                <option>Tshuapa</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-6 col-lg-3">
-                                        <div class="form-group" id="msform1">
-                                            <label><strong>Postal Code</strong></label>
-                                            <input type="text" id="code" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- <input type="button" name="next" class="next action-button" value="Next"/> -->
                         </div>
-                    </form>
+                    </div>
                 </div>
-                
-                <!-- <input type="button" name="next" class="next action-button" value="Next"/> -->
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Social Profiles</h2>
-                <h3 class="fs-subtitle">Your presence on the social network</h3>
-                <div class="col-sm-12">
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group" id="msform1">
-                                <label><strong>Allergies</strong></label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
-                            </div>
+    <br>
+                <div class="col-md-8 col-md-offset-3">
+                    <div class="card">  
+                        <div class="card-header">
+                            <h2 class="fs-title">Social Profiles</h2>
+                            <h3 class="fs-subtitle">Your presence on the social network</h3>
+                            <hr>
                         </div>
-
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
                                     <div class="form-group" id="msform1">
-                                        <label><strong>Listes des medicaments</strong></label>
+                                        <label><strong>Allergies</strong></label>
                                         <textarea cols="30" rows="4" class="form-control"></textarea>
-                               </div>
-                        </div>
-                   
+                                    </div>
+                                </div>
 
-                        <div class="col-sm-12" id="msform1">
-                            <div class="form-group">
-                                <label class="form-check-label"><strong>Port des Lunettes</strong></label>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" name="gender" class="form-check-input">Oui
-                                    </label>
+                                <div class="col-sm-6">
+                                            <div class="form-group" id="msform1">
+                                                <label><strong>Listes des medicaments</strong></label>
+                                                <textarea cols="30" rows="4" class="form-control"></textarea>
+                                    </div>
                                 </div>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" name="gender" class="form-check-input">Non
-                                    </label>
+                        
+
+                                <div class="col-sm-12" id="msform1">
+                                    <div class="form-group">
+                                        <label class="form-check-label"><strong>Port des Lunettes</strong></label>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" name="gender" class="form-check-input">Oui
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" name="gender" class="form-check-input">Non
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
-                        </div>
 
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 col-md-6 col-lg-4">
-                            <div class="form-group" id="msform1">
-                                <label><strong>Derniere Consultation en Ophtalmologie</strong></label>
-                                <div class="cal-icon">
-                                    <input type="text" class="form-control datetimepicker">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="form-group" id="msform1">
+                                        <label><strong>Derniere Consultation en Ophtalmologie</strong></label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker">
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="form-group" id="msform1">
+                                        <label><strong>Nom Du Medecin Traitant</strong></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="form-group" id="msform1">
+                                        <label><strong>Nom de la Clinique</strong></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
 
-                        <div class="col-sm-6 col-md-6 col-lg-4">
-                            <div class="form-group" id="msform1">
-                                <label><strong>Nom Du Medecin Traitant</strong></label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-6 col-lg-4">
-                            <div class="form-group" id="msform1">
-                                <label><strong>Nom de la Clinique</strong></label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-
-                    </div>
-
-                        <div class="col-md-12" id="msform1">
-                            <div class="form-group">
-                                <label class="form-check-label"><strong> Antecedents Medicaux familiale</strong> </label>
-                                <div class="row">
-                                <div class="col-sm-4">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Diabète">Diabète</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Hypertension artérielle">Hypertension artérielle</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Cholestérol">Cholestérol</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Problèmes cardiaques">Problèmes cardiaques</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Asthme">Asthme</label>
-                                </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="antcedants" class="form-check-input" value="Maladie rénale">Maladie rénale</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="antcedants" class="form-check-input" value="Calculs rénaux">Calculs rénaux</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="antcedants" class="form-check-input" value="Jaunisse">Jaunisse</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="antcedants" class="form-check-input" value="Rhumatisme articulaire aigu">Rhumatisme articulaire aigu</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="antcedants" class="form-check-input" value="Cancer">Cancer</label>
-                                    </div>
-                                    </div>
-
-                                    <div class="col-sm-4">
+                                <div class="col-md-12" id="msform1">
+                                    <div class="form-group">
+                                        <label class="form-check-label"><strong> Antecedents Medicaux familiale</strong> </label>
+                                        <div class="row">
+                                        <div class="col-sm-4">
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" name="antcedants" class="form-check-input" value="VIH/SIDA">VIH/SIDA</label>
+                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Diabète">Diabète</label>
                                         </div>
 
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Épilepsie">Épilepsie</label>
+                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Hypertension artérielle">Hypertension artérielle</label>
                                         </div>
 
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Grossesse">Grossesse</label>
+                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Cholestérol">Cholestérol</label>
                                         </div>
 
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Anticoagulants">Anticoagulants</label>
+                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Problèmes cardiaques">Problèmes cardiaques</label>
                                         </div>
 
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Chirugie">Chirugie</label>
-                                        </div>
-                                        </div>
-
-                                </div> 
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12" id="msform1">
-                            <div class="form-group">
-                                <label class="form-check-label"><strong>Oculaires Familialle</strong> </label>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="diabète"
-                                                class="form-check-input">Diabète</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="hypertension"
-                                                class="form-check-input">Hypertension artérielle</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="cholesterol"
-                                                class="form-check-input">Cholestérol</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="cardiaques"
-                                                class="form-check-input">Problèmes cardiaques</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="asthme"
-                                                class="form-check-input">Asthme</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="cardiaques"
-                                                class="form-check-input">Problèmes cardiaques</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="asthme"
-                                                class="form-check-input">Asthme</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="asthme"
-                                                class="form-check-input">Asthme</label>
-                                    </div>
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="rein"
-                                                    class="form-check-input">Maladie rénale</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="renaux"
-                                                    class="form-check-input">Calculs rénaux</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="jaunisse"
-                                                    class="form-check-input">Jaunisse</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="rhumatisme"
-                                                    class="form-check-input">Rhumatisme articulaire aigu</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="cancer"
-                                                    class="form-check-input">Cancer</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="grossesse"
-                                                    class="form-check-input">Grossesse</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="anticoagulants"
-                                                    class="form-check-input">Anticoagulants</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="chirurgie"
-                                                    class="form-check-input">Chirugie</label>
+                                                <input type="checkbox" name="antcedants" class="form-check-input" value="Asthme">Asthme</label>
                                         </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="sida"
-                                                        class="form-check-input">VIH / SIDA</label>
+                                                    <input type="checkbox" name="antcedants" class="form-check-input" value="Maladie rénale">Maladie rénale</label>
                                             </div>
 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="epilepsie"
-                                                        class="form-check-input">Épilepsie</label>
+                                                    <input type="checkbox" name="antcedants" class="form-check-input" value="Calculs rénaux">Calculs rénaux</label>
                                             </div>
 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="grossesse"
-                                                        class="form-check-input">Grossesse</label>
+                                                    <input type="checkbox" name="antcedants" class="form-check-input" value="Jaunisse">Jaunisse</label>
                                             </div>
 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="anticoagulants"
-                                                        class="form-check-input">Anticoagulants</label>
+                                                    <input type="checkbox" name="antcedants" class="form-check-input" value="Rhumatisme articulaire aigu">Rhumatisme articulaire aigu</label>
                                             </div>
 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="chirurgie"
-                                                        class="form-check-input">Chirugie</label>
+                                                    <input type="checkbox" name="antcedants" class="form-check-input" value="Cancer">Cancer</label>
+                                            </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="antcedants" class="form-check-input" value="VIH/SIDA">VIH/SIDA</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Épilepsie">Épilepsie</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Grossesse">Grossesse</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Anticoagulants">Anticoagulants</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="antcedants" class="form-check-input" value="Chirugie">Chirugie</label>
+                                                </div>
+                                                </div>
+
+                                        </div> 
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12" id="msform1">
+                                    <div class="form-group">
+                                        <label class="form-check-label"><strong>Oculaires Familialle</strong> </label>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="diabète"
+                                                        class="form-check-input">Diabète</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="hypertension"
+                                                        class="form-check-input">Hypertension artérielle</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="cholesterol"
+                                                        class="form-check-input">Cholestérol</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="cardiaques"
+                                                        class="form-check-input">Problèmes cardiaques</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="asthme"
+                                                        class="form-check-input">Asthme</label>
                                             </div>
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="grossesse"
-                                                        class="form-check-input">Grossesse</label>
+                                                    <input type="checkbox" name="cardiaques"
+                                                        class="form-check-input">Problèmes cardiaques</label>
                                             </div>
 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="anticoagulants"
-                                                        class="form-check-input">Anticoagulants</label>
+                                                    <input type="checkbox" name="asthme"
+                                                        class="form-check-input">Asthme</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="asthme"
+                                                        class="form-check-input">Asthme</label>
+                                            </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="rein"
+                                                            class="form-check-input">Maladie rénale</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="renaux"
+                                                            class="form-check-input">Calculs rénaux</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="jaunisse"
+                                                            class="form-check-input">Jaunisse</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="rhumatisme"
+                                                            class="form-check-input">Rhumatisme articulaire aigu</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="cancer"
+                                                            class="form-check-input">Cancer</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="grossesse"
+                                                            class="form-check-input">Grossesse</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="anticoagulants"
+                                                            class="form-check-input">Anticoagulants</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="chirurgie"
+                                                            class="form-check-input">Chirugie</label>
+                                                </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="sida"
+                                                                class="form-check-input">VIH / SIDA</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="epilepsie"
+                                                                class="form-check-input">Épilepsie</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="grossesse"
+                                                                class="form-check-input">Grossesse</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="anticoagulants"
+                                                                class="form-check-input">Anticoagulants</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="chirurgie"
+                                                                class="form-check-input">Chirugie</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="grossesse"
+                                                                class="form-check-input">Grossesse</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="anticoagulants"
+                                                                class="form-check-input">Anticoagulants</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="chirurgie"
+                                                                class="form-check-input">Chirugie</label>
+                                                    </div>
+                                                    </div>
+
+                                            </div> 
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-sm-12" id="msform1">
+                                    <div class="form-group">
+                                        <label class="form-check-label"><strong>Oculaires Personnelle</strong> </label>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="diabète"
+                                                        class="form-check-input">Diabète</label>
                                             </div>
 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="checkbox" name="chirurgie"
-                                                        class="form-check-input">Chirugie</label>
+                                                    <input type="checkbox" name="hypertension"
+                                                        class="form-check-input">Hypertension artérielle</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="cholesterol"
+                                                        class="form-check-input">Cholestérol</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="cardiaques"
+                                                        class="form-check-input">Problèmes cardiaques</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="asthme"
+                                                        class="form-check-input">Asthme</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="cardiaques"
+                                                        class="form-check-input">Problèmes cardiaques</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="asthme"
+                                                        class="form-check-input">Asthme</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="asthme"
+                                                        class="form-check-input">Asthme</label>
                                             </div>
                                             </div>
 
-                                    </div> 
+                                            <div class="col-sm-4">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="rein"
+                                                            class="form-check-input">Maladie rénale</label>
+                                                </div>
 
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="renaux"
+                                                            class="form-check-input">Calculs rénaux</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="jaunisse"
+                                                            class="form-check-input">Jaunisse</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="rhumatisme"
+                                                            class="form-check-input">Rhumatisme articulaire aigu</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="cancer"
+                                                            class="form-check-input">Cancer</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="grossesse"
+                                                            class="form-check-input">Grossesse</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="anticoagulants"
+                                                            class="form-check-input">Anticoagulants</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" name="chirurgie"
+                                                            class="form-check-input">Chirugie</label>
+                                                </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="sida"
+                                                                class="form-check-input">VIH / SIDA</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="epilepsie"
+                                                                class="form-check-input">Épilepsie</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="grossesse"
+                                                                class="form-check-input">Grossesse</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="anticoagulants"
+                                                                class="form-check-input">Anticoagulants</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="chirurgie"
+                                                                class="form-check-input">Chirugie</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="grossesse"
+                                                                class="form-check-input">Grossesse</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="anticoagulants"
+                                                                class="form-check-input">Anticoagulants</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" name="chirurgie"
+                                                                class="form-check-input">Chirugie</label>
+                                                    </div>
+                                                    </div>
+
+                                            </div> 
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12" id="msform1">
+                                    <div class="form-group">
+                                        <label><strong>Autres Informations</strong></label>
+                                        <textarea cols="30" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
                             </div>
-
-
-                        </div>
-
-                        <div class="col-sm-12" id="msform1">
-                            <div class="form-group">
-                                <label class="form-check-label"><strong>Oculaires Personnelle</strong> </label>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="diabète"
-                                                class="form-check-input">Diabète</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="hypertension"
-                                                class="form-check-input">Hypertension artérielle</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="cholesterol"
-                                                class="form-check-input">Cholestérol</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="cardiaques"
-                                                class="form-check-input">Problèmes cardiaques</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="asthme"
-                                                class="form-check-input">Asthme</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="cardiaques"
-                                                class="form-check-input">Problèmes cardiaques</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="asthme"
-                                                class="form-check-input">Asthme</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" name="asthme"
-                                                class="form-check-input">Asthme</label>
-                                    </div>
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="rein"
-                                                    class="form-check-input">Maladie rénale</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="renaux"
-                                                    class="form-check-input">Calculs rénaux</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="jaunisse"
-                                                    class="form-check-input">Jaunisse</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="rhumatisme"
-                                                    class="form-check-input">Rhumatisme articulaire aigu</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="cancer"
-                                                    class="form-check-input">Cancer</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="grossesse"
-                                                    class="form-check-input">Grossesse</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="anticoagulants"
-                                                    class="form-check-input">Anticoagulants</label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" name="chirurgie"
-                                                    class="form-check-input">Chirugie</label>
-                                        </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="sida"
-                                                        class="form-check-input">VIH / SIDA</label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="epilepsie"
-                                                        class="form-check-input">Épilepsie</label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="grossesse"
-                                                        class="form-check-input">Grossesse</label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="anticoagulants"
-                                                        class="form-check-input">Anticoagulants</label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="chirurgie"
-                                                        class="form-check-input">Chirugie</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="grossesse"
-                                                        class="form-check-input">Grossesse</label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="anticoagulants"
-                                                        class="form-check-input">Anticoagulants</label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" name="chirurgie"
-                                                        class="form-check-input">Chirugie</label>
-                                            </div>
-                                            </div>
-
-                                    </div> 
-                                
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12" id="msform1">
-                            <div class="form-group">
-                                <label><strong>Autres Informations</strong></label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
-                            </div>
-                        </div>
+                            
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                        <input type="button" name="next" class="next action-button" value="Next"/>
                     </div>
-                    
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-        </form>
-        <!-- link to designify.me code snippets -->
-        <div class="dme_link">
-            <p><a href="http://designify.me/code-snippets-js/" target="_blank">More Code Snippets</a></p>
-        </div>
-        <!-- /.link to designify.me code snippets -->
-    </div>
+                </div>
 
-</div>
+            </form>
+            <!-- link to designify.me code snippets -->
+            <div class="dme_link">
+                <p><a href="http://designify.me/code-snippets-js/" target="_blank">More Code Snippets</a></p>
+            </div>
+            <!-- /.link to designify.me code snippets -->
+
 <!-- /.MultiStep Form -->
               
                     <div class="sidebar-overlay" data-reff=""></div>
